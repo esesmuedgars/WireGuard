@@ -264,7 +264,7 @@ public class WireGuardAdapter {
 
                     wgSetConfig(handle, wgConfig)
                     #if os(iOS)
-                    wgDisableSomeRoamingForBrokenMobileSemantics(handle)
+                    // wgDisableSomeRoamingForBrokenMobileSemantics(handle)
                     #endif
 
                     self.state = .started(handle, settingsGenerator)
@@ -378,7 +378,7 @@ public class WireGuardAdapter {
             throw WireGuardAdapterError.startWireGuardBackend(handle)
         }
         #if os(iOS)
-        wgDisableSomeRoamingForBrokenMobileSemantics(handle)
+        // wgDisableSomeRoamingForBrokenMobileSemantics(handle)
         #endif
         return handle
     }
@@ -428,7 +428,7 @@ public class WireGuardAdapter {
                 self.logEndpointResolutionResults(resolutionResults)
 
                 wgSetConfig(handle, wgConfig)
-                wgDisableSomeRoamingForBrokenMobileSemantics(handle)
+                // wgDisableSomeRoamingForBrokenMobileSemantics(handle)
                 wgBumpSockets(handle)
             } else {
                 self.logHandler(.verbose, "Connectivity offline, pausing backend.")
